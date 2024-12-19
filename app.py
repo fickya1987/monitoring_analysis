@@ -27,9 +27,9 @@ if uploaded_file:
         filtered_data = st.data_editor(data, use_container_width=True)
 
         # GPT-4o Integration for Analysis
-        st.subheader("Analisis Data dengan GPT-4o")
+        st.subheader("TKMP Planning and Monitoring Analysis with Pelindo AI")
         analysis_query = st.text_area("Deskripsi analisis atau detail pencarian:")
-        analysis_type = st.radio("Pilih Jenis Analisis GPT-4o:", ["Analisis Berdasarkan Data", "Pencarian Global GPT-4o"])
+        analysis_type = st.radio("Pilih Jenis Analisis Pelindo AI:", ["Analisis Berdasarkan Data", "Pencarian Global Pelindo AI"])
 
         if st.button("Generate AI Analysis") and analysis_query:
             try:
@@ -39,14 +39,14 @@ if uploaded_file:
                     response_data = openai.ChatCompletion.create(
                         model="gpt-4o",
                         messages=[
-                            {"role": "system", "content": "Anda adalah analis data berpengalaman. Gunakan bahasa Indonesia."},
+                            {"role": "system", "content": "Anda adalah analis data berpengalaman mengenai pelabuhan dan Pelindo. Gunakan bahasa Indonesia."},
                             {"role": "user", "content": prompt_data}
                         ],
                         max_tokens=2048,
                         temperature=1.0
                     )
                     result_data = response_data['choices'][0]['message']['content']
-                    st.write("#### Hasil Analisis Berdasarkan Data:")
+                    st.write("#### Hasil Analisis Berdasarkan Data Pelindo AI:")
                     st.write(result_data)
                 else:
                     # Pencarian global GPT-4o
@@ -61,7 +61,7 @@ if uploaded_file:
                         temperature=1.0
                     )
                     result_search = response_search['choices'][0]['message']['content']
-                    st.write("#### Hasil Pencarian Global GPT-4o:")
+                    st.write("#### Hasil Pencarian Global Pelindo AI:")
                     st.write(result_search)
             except Exception as e:
                 st.error(f"Error generating analysis: {e}")
