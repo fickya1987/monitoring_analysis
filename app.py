@@ -8,7 +8,7 @@ import openai
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-st.title("Data Analysis with AI (GPT-4o)")
+st.title("TKMP Planning and Monitoring Analysis with Pelindo AI")
 
 # File upload
 uploaded_file = st.file_uploader("Upload a CSV or Excel file", type=["csv", "xlsx"])
@@ -27,7 +27,7 @@ if uploaded_file:
         filtered_data = st.data_editor(data, use_container_width=True)
 
         # GPT-4o Integration for Analysis
-        st.subheader("TKMP Planning and Monitoring Analysis with Pelindo AI")
+        st.subheader("Analysis with Pelindo AI")
         analysis_query = st.text_area("Deskripsi analisis atau detail pencarian:")
         analysis_type = st.radio("Pilih Jenis Analisis Pelindo AI:", ["Analisis Berdasarkan Data", "Pencarian Global Pelindo AI"])
 
