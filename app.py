@@ -27,11 +27,11 @@ if uploaded_file:
         filtered_data = st.data_editor(data, use_container_width=True)
 
         # GPT-4o Integration for Analysis
-        st.subheader("Analysis with Pelindo AI")
+        st.subheader("Analisa dengan Pelindo AI")
         analysis_query = st.text_area("Deskripsi analisis atau detail pencarian:")
         analysis_type = st.radio("Pilih Jenis Analisis Pelindo AI:", ["Analisis Berdasarkan Data", "Pencarian Global Pelindo AI"])
 
-        if st.button("Generate AI Analysis") and analysis_query:
+        if st.button("Generate Pelindo AI") and analysis_query:
             try:
                 if analysis_type == "Analisis Berdasarkan Data":
                     # Analisis berdasarkan data
